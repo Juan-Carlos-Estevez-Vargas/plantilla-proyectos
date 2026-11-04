@@ -6,6 +6,7 @@
 [![CodeQL](https://github.com/Juan-Carlos-Estevez-Vargas/NOMBRE-DEL-REPO/actions/workflows/codeql.yml/badge.svg)](https://github.com/Juan-Carlos-Estevez-Vargas/NOMBRE-DEL-REPO/actions/workflows/codeql.yml)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Juan-Carlos-Estevez-Vargas/NOMBRE-DEL-REPO/badge)](https://scorecard.dev/viewer/?uri=github.com/Juan-Carlos-Estevez-Vargas/NOMBRE-DEL-REPO)
 [![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-blue)](LICENSE)
+[![Invítame un café en Ko-fi](https://img.shields.io/badge/Ko--fi-Inv%C3%ADtame%20un%20caf%C3%A9-ff5e5b?logo=kofi&logoColor=white)](https://ko-fi.com/juancarlosestevezvargas)
 
 > Repo creado desde la plantilla de proyectos. Antes del primer commit:
 > reemplaza `NOMBRE-DEL-REPO` en todos los archivos, borra este aviso y sigue
@@ -15,10 +16,17 @@
 
 - [Descripción](#descripción)
 - [Capturas](#capturas)
+- [Funcionalidades](#funcionalidades)
 - [Tecnologías](#tecnologías)
 - [Inicio rápido](#inicio-rápido)
+- [Scripts](#scripts)
+- [Arquitectura](#arquitectura)
+- [Seguridad y privacidad](#seguridad-y-privacidad)
+- [Accesibilidad, idiomas y SEO](#accesibilidad-idiomas-y-seo)
+- [Despliegue y versiones](#despliegue-y-versiones)
 - [Documentación](#documentación)
 - [Contribuir](#contribuir)
+- [Apoyar el proyecto](#apoyar-el-proyecto)
 - [Licencia](#licencia)
 
 ## Descripción
@@ -28,6 +36,12 @@ Qué problema resuelve, sus funciones principales y en qué estado está.
 ## Capturas
 
 <!-- Imágenes en docs/capturas/ con texto alternativo descriptivo. -->
+
+## Funcionalidades
+
+| Área | Ruta | Acceso |
+| --- | --- | --- |
+| | | |
 
 ## Tecnologías
 
@@ -48,6 +62,35 @@ Qué problema resuelve, sus funciones principales y en qué estado está.
 # correr las pruebas
 ```
 
+## Scripts
+
+| Comando | Qué hace |
+| --- | --- |
+| | |
+
+## Arquitectura
+
+Resumen de las capas y cómo se conectan. El detalle está en
+[ARQUITECTURA.md](docs/ARQUITECTURA.md) y los diagramas en
+[DIAGRAMAS.md](docs/DIAGRAMAS.md).
+
+## Seguridad y privacidad
+
+Qué protege la app y cómo (autenticación, permisos, cabeceras, secretos,
+datos personales). Estado de cada punto en
+[SEGURIDAD_OWASP.md](docs/SEGURIDAD_OWASP.md) y en [LEGAL.md](docs/LEGAL.md).
+
+## Accesibilidad, idiomas y SEO
+
+Nivel de accesibilidad que se busca (WCAG 2.2 AA), idiomas disponibles y cómo
+se detecta el del navegador ([IDIOMAS.md](docs/IDIOMAS.md)), y qué páginas se
+indexan.
+
+## Despliegue y versiones
+
+Dónde se publica, qué variables necesita y cómo se versiona. Paso a paso en
+[DESPLIEGUE.md](docs/DESPLIEGUE.md).
+
 ## Documentación
 
 | Documento | Contenido |
@@ -65,6 +108,16 @@ Qué problema resuelve, sus funciones principales y en qué estado está.
 Lee la [guía de contribución](CONTRIBUTING.md). Los commits siguen
 [Conventional Commits](https://www.conventionalcommits.org/es/).
 
+## Apoyar el proyecto
+
+Si este proyecto te sirvió o aprendiste algo del código, puedes invitarme un
+café:
+
+<a href="https://ko-fi.com/juancarlosestevezvargas"><img src="https://img.shields.io/badge/Ko--fi-Inv%C3%ADtame%20un%20caf%C3%A9-ff5e5b?style=for-the-badge&logo=kofi&logoColor=white" alt="Invítame un café en Ko-fi"></a>
+
+GitHub también muestra el botón **Sponsor** del repositorio
+(`.github/FUNDING.yml`).
+
 ## Licencia
 
 [MIT](LICENSE) © Juan Carlos Estevez Vargas
@@ -78,5 +131,7 @@ Lee la [guía de contribución](CONTRIBUTING.md). Los commits siguen
 - [ ] GitHub → Settings → Rules: proteger la rama principal (PR obligatorio, CI en verde, sin force push)
 - [ ] GitHub → Settings → Code security: Secret scanning, Push protection, Dependabot alerts y Private vulnerability reporting
 - [ ] Si la app tiene interfaz: montar los idiomas con [docs/IDIOMAS.md](docs/IDIOMAS.md) (en React + TypeScript, copiar `extras/i18n-react/`); si no, borrar `extras/` y esa guía
+- [ ] Llenar o borrar las secciones del README que no apliquen (Funcionalidades, Scripts…)
+- [ ] Si la app tiene interfaz y quieres el botón «Invítame un café», usar el mismo enlace de Ko-fi (`https://ko-fi.com/juancarlosestevezvargas`); `.github/FUNDING.yml` ya lo trae
 - [ ] Descripción, temas (topics) y enlace al sitio del repo
 - [ ] Borrar esta sección
