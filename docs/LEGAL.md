@@ -18,3 +18,8 @@ dilo aquí en una línea.
 | Servicio | Qué recibe | Para qué |
 | --- | --- | --- |
 | | | |
+
+## Traducciones
+
+Si la app está en varios idiomas, el texto legal válido es el del idioma base.
+Las versiones traducidas son de cortesía y lo dicen al inicio.

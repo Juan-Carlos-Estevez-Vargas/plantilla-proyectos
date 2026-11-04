@@ -7,6 +7,7 @@ cambio en la app actualiza aquí el diagrama afectado o agrega uno nuevo.
 - [Modelo de datos](#modelo-de-datos)
 - [Inicio de sesión y permisos](#inicio-de-sesión-y-permisos)
 - [Integración y despliegue](#integración-y-despliegue)
+- [Idiomas](#idiomas)
 
 ## Arquitectura general
 
@@ -59,4 +60,20 @@ flowchart LR
   M --> D["Despliegue"]
   M --> SC["Scorecard"]
   D --> R["Tag vX.Y.Z + release"]
+```
+
+## Idiomas
+
+```mermaid
+flowchart TD
+  A["Abrir la app"] --> B{"¿Hay idioma guardado?"}
+  B -- "sí" --> L["Ese idioma"]
+  B -- "no" --> C["navigator.languages<br/>matchLocale()"]
+  C -- "disponible" --> L
+  C -- "ninguno" --> BASE["Idioma base"]
+  L --> D["Descarga su diccionario<br/>(si no es el base)"]
+  D --> R["Pinta la app"]
+  BASE --> R
+  R --> H["&lt;html lang&gt;, SEO y fechas con Intl"]
+  S["Selector 🌐"] -- "setLocale()" --> G["Guarda la elección"] --> D
 ```

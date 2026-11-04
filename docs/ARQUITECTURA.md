@@ -16,6 +16,7 @@ Qué hace el sistema y cuáles son sus piezas principales. El diagrama está en
 ```
 src/        código de la aplicación
 docs/       documentación y diagramas
+extras/     piezas opcionales para copiar (i18n-react: base de idiomas)
 scripts/    utilidades de CI y mantenimiento
 .github/    CI, CodeQL, Scorecard, Dependabot y plantillas
 ```
@@ -25,11 +26,17 @@ scripts/    utilidades de CI y mantenimiento
 Interfaz, lógica de dominio y acceso a datos separados; la interfaz no habla
 directo con la base de datos.
 
-## 5. Seguridad
+## 5. Idiomas
+
+La app arranca en el idioma del dispositivo, se cambia con el selector 🌐 y
+recuerda la elección. Los textos salen de diccionarios tipados (el idioma base
+define el tipo). Las reglas y la estructura están en [IDIOMAS.md](IDIOMAS.md).
+
+## 6. Seguridad
 
 Resumen y enlace a [SEGURIDAD_OWASP.md](SEGURIDAD_OWASP.md).
 
-## 6. Integración y despliegue continuos
+## 7. Integración y despliegue continuos
 
 - **CI** (`.github/workflows/ci.yml`): secretos, pruebas, auditoría de dependencias y build en cada push y PR.
 - **CodeQL** (`.github/workflows/codeql.yml`): análisis de seguridad del código en cada PR y cada semana.

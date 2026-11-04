@@ -24,4 +24,5 @@
 - [ ] Actualicé el README y la documentación que cambia
 - [ ] Las migraciones nuevas tienen fecha posterior a las ya fusionadas y sus pruebas
 - [ ] La interfaz sigue siendo accesible (teclado, foco, contraste, `alt`)
+- [ ] Los textos nuevos están en todos los idiomas (sin textos escritos a mano en la interfaz)
 - [ ] No incluye claves, contraseñas ni datos personales
