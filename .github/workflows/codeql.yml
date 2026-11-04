@@ -20,6 +20,9 @@ concurrency:
 
 jobs:
   analizar:
+    # Code scanning es gratis en repos públicos. En uno privado hace falta
+    # GitHub Advanced Security; sin eso el job se salta en vez de fallar.
+    if: ${{ !github.event.repository.private }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions:

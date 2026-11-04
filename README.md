@@ -72,7 +72,7 @@ Lee la [guía de contribución](CONTRIBUTING.md). Los commits siguen
 
 - [ ] Reemplazar `NOMBRE-DEL-REPO` y `NOMBRE DEL PROYECTO` en todos los archivos
 - [ ] Dejar en `.github/dependabot.yml` solo los ecosistemas que use el proyecto
-- [ ] Ajustar los lenguajes de `.github/workflows/codeql.yml`
+- [ ] Ajustar los lenguajes de `.github/workflows/codeql.yml` (CodeQL y Scorecard solo corren en repos públicos; en uno privado se saltan solos)
 - [ ] GitHub → Settings → General: permitir solo *squash merge* y borrar ramas al fusionar
 - [ ] GitHub → Settings → Rules: proteger la rama principal (PR obligatorio, CI en verde, sin force push)
 - [ ] GitHub → Settings → Code security: Secret scanning, Push protection, Dependabot alerts y Private vulnerability reporting

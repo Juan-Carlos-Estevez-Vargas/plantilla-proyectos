@@ -16,6 +16,10 @@ permissions: read-all
 
 jobs:
   analizar:
+    # Scorecard y Code scanning solo funcionan sin costo en repos públicos.
+    # En uno privado el job se salta (para usarlo ahí hace falta un token
+    # personal en `repo_token` y GitHub Advanced Security).
+    if: ${{ !github.event.repository.private }}
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
