@@ -57,6 +57,7 @@ Qué problema resuelve, sus funciones principales y en qué estado está.
 | [Despliegue](docs/DESPLIEGUE.md) | Cómo montarlo desde cero y qué variables necesita |
 | [Seguridad](docs/SEGURIDAD_OWASP.md) | Estado de cada punto de seguridad |
 | [Legal](docs/LEGAL.md) | Privacidad, datos personales y licencias |
+| [Idiomas](docs/IDIOMAS.md) | Cómo traducir la app: detección del idioma, selector y diccionarios |
 | [Política de seguridad](SECURITY.md) | Cómo reportar una vulnerabilidad |
 
 ## Contribuir
@@ -76,5 +77,6 @@ Lee la [guía de contribución](CONTRIBUTING.md). Los commits siguen
 - [ ] GitHub → Settings → General: permitir solo *squash merge* y borrar ramas al fusionar
 - [ ] GitHub → Settings → Rules: proteger la rama principal (PR obligatorio, CI en verde, sin force push)
 - [ ] GitHub → Settings → Code security: Secret scanning, Push protection, Dependabot alerts y Private vulnerability reporting
+- [ ] Si la app tiene interfaz: montar los idiomas con [docs/IDIOMAS.md](docs/IDIOMAS.md) (en React + TypeScript, copiar `extras/i18n-react/`); si no, borrar `extras/` y esa guía
 - [ ] Descripción, temas (topics) y enlace al sitio del repo
 - [ ] Borrar esta sección

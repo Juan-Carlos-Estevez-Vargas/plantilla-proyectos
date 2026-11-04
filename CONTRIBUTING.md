@@ -41,3 +41,5 @@ un issue.
   las ya fusionadas.
 - Interfaz accesible: etiquetas en los campos, foco visible, `alt` en las
   imágenes y nada que dependa solo del color.
+- Interfaz en varios idiomas: ningún texto visible escrito a mano en el código;
+  cada texto nuevo va en todos los diccionarios (ver [docs/IDIOMAS.md](docs/IDIOMAS.md)).
