@@ -21,7 +21,8 @@
 
 - [ ] Las pruebas y el build pasan en local
 - [ ] Actualicé los diagramas afectados (o agregué uno nuevo) en `docs/DIAGRAMAS.md`
-- [ ] Actualicé el README y la documentación que cambia
+- [ ] Actualicé el README y la documentación que cambia (`node scripts/check-links.mjs` pasa)
+- [ ] Si es una decisión importante, agregué su ADR en `docs/adr/`
 - [ ] Las migraciones nuevas tienen fecha posterior a las ya fusionadas y sus pruebas
 - [ ] La interfaz sigue siendo accesible (teclado, foco, contraste, `alt`)
 - [ ] Los textos nuevos están en todos los idiomas (sin textos escritos a mano en la interfaz)

@@ -16,6 +16,21 @@ repo ni en variables que lleguen al navegador.
 1. 
 2. 
 
+## Versiones
+
+Se sigue [SemVer](https://semver.org/lang/es/) a partir de los commits
+(ver [CONTRIBUTING.md](../CONTRIBUTING.md#mensajes-de-commit)). Después de
+cada despliegue:
+
+```bash
+git tag v1.2.0
+git push origin v1.2.0
+```
+
+El flujo `release.yml` publica el release con las notas agrupadas; luego se
+pasa el resumen al [CHANGELOG](../CHANGELOG.md). Diagrama en
+[DIAGRAMAS.md](DIAGRAMAS.md#versiones-y-releases).
+
 ## Volver a la versión anterior
 
 Cómo regresar al despliegue anterior si algo falla.

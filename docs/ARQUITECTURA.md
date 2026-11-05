@@ -15,10 +15,10 @@ Qué hace el sistema y cuáles son sus piezas principales. El diagrama está en
 
 ```
 src/        código de la aplicación
-docs/       documentación y diagramas
+docs/       documentación, diagramas y decisiones (adr/)
 extras/     piezas opcionales para copiar (i18n-react: base de idiomas)
-scripts/    utilidades de CI y mantenimiento
-.github/    CI, CodeQL, Scorecard, Dependabot y plantillas
+scripts/    utilidades de CI y mantenimiento, con sus pruebas
+.github/    CI, CodeQL, Scorecard, release, Dependabot, CODEOWNERS y plantillas
 ```
 
 ## 4. Capas
@@ -36,8 +36,14 @@ define el tipo). Las reglas y la estructura están en [IDIOMAS.md](IDIOMAS.md).
 
 Resumen y enlace a [SEGURIDAD_OWASP.md](SEGURIDAD_OWASP.md).
 
+Las decisiones importantes (stack, base de datos, hosting) tienen su ADR en
+[adr/](adr/README.md).
+
 ## 7. Integración y despliegue continuos
 
-- **CI** (`.github/workflows/ci.yml`): secretos, pruebas, auditoría de dependencias y build en cada push y PR.
+- **CI** (`.github/workflows/ci.yml`): secretos, enlaces de la documentación, pruebas de los scripts, pruebas del proyecto, auditoría de dependencias y build en cada push y PR.
 - **CodeQL** (`.github/workflows/codeql.yml`): análisis de seguridad del código en cada PR y cada semana.
 - **Scorecard** (`.github/workflows/scorecard.yml`): puntaje de prácticas del repo en cada merge y cada semana.
+- **Release** (`.github/workflows/release.yml`): publica el release con notas automáticas al subir un tag `vX.Y.Z`.
+
+El camino completo está en [DIAGRAMAS.md](DIAGRAMAS.md#integración-y-despliegue).

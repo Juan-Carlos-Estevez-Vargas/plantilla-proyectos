@@ -1,7 +1,9 @@
 # CI de la plantilla: corre en cada push y PR.
 #
 #   1. Busca secretos en los archivos y en todo el historial de git.
-#   2. Detecta el stack por sus archivos y corre sus pruebas y su auditoría
+#   2. Revisa que los enlaces internos de la documentación no estén rotos.
+#   3. Corre las pruebas de los scripts (scripts/*.test.mjs).
+#   4. Detecta el stack por sus archivos y corre sus pruebas y su auditoría
 #      de dependencias. Cuando el proyecto tenga su propio comando (por
 #      ejemplo `npm run check`), reemplaza el paso "Pruebas" por ese comando.
 name: CI
@@ -32,6 +34,10 @@ jobs:
           node-version: 22
       - name: Sin secretos en el repo ni en el historial
         run: node scripts/check-secrets.mjs --history
+      - name: Enlaces internos de la documentación
+        run: node scripts/check-links.mjs
+      - name: Pruebas de los scripts
+        run: node --test "scripts/*.test.mjs"
       - name: Pruebas y auditoría de dependencias
         run: |
           set -euo pipefail
@@ -62,4 +68,4 @@ jobs:
             cmake --build build
             (cd build && ctest --output-on-failure)
           fi
-          if [ "$ran" = 0 ]; then echo "::notice::No se detectó un stack: solo se buscaron secretos."; fi
+          if [ "$ran" = 0 ]; then echo "::notice::No se detectó un stack: solo se revisaron secretos, enlaces y scripts."; fi

@@ -7,7 +7,9 @@ cambio en la app actualiza aquí el diagrama afectado o agrega uno nuevo.
 - [Modelo de datos](#modelo-de-datos)
 - [Inicio de sesión y permisos](#inicio-de-sesión-y-permisos)
 - [Integración y despliegue](#integración-y-despliegue)
+- [Versiones y releases](#versiones-y-releases)
 - [Idiomas](#idiomas)
+- [Inicio desde la plantilla](#inicio-desde-la-plantilla)
 
 ## Arquitectura general
 
@@ -54,12 +56,29 @@ sequenceDiagram
 ```mermaid
 flowchart LR
   B["Rama"] --> PR["Pull request"]
-  PR --> CI["CI: secretos · pruebas · auditoría · build"]
+  PR --> CI["CI: secretos · enlaces · pruebas de scripts<br/>pruebas · auditoría · build"]
   PR --> CQ["CodeQL"]
   CI -- "verde" --> M["Squash merge"]
+  CQ -- "sin alertas" --> M
   M --> D["Despliegue"]
   M --> SC["Scorecard"]
-  D --> R["Tag vX.Y.Z + release"]
+  D --> T["Tag vX.Y.Z"]
+  T --> R["Release con notas<br/>(release.yml)"]
+  DB["Dependabot"] -. "PR de dependencias" .-> PR
+```
+
+## Versiones y releases
+
+```mermaid
+flowchart LR
+  C["Commits en Conventional Commits"] --> Q{"¿Qué tipo?"}
+  Q -- "feat! / BREAKING CHANGE" --> MA["Sube la mayor<br/>2.0.0"]
+  Q -- "feat" --> MI["Sube la menor<br/>1.3.0"]
+  Q -- "fix, docs, chore…" --> PA["Sube el parche<br/>1.2.1"]
+  MA & MI & PA --> TAG["git tag vX.Y.Z<br/>git push origin vX.Y.Z"]
+  TAG --> WF["release.yml"]
+  WF --> REL["Release con notas agrupadas<br/>(.github/release.yml)"]
+  REL --> CL["Línea en CHANGELOG.md"]
 ```
 
 ## Idiomas
@@ -76,4 +95,24 @@ flowchart TD
   BASE --> R
   R --> H["&lt;html lang&gt;, SEO y fechas con Intl"]
   S["Selector 🌐"] -- "setLocale()" --> G["Guarda la elección"] --> D
+```
+
+## Inicio desde la plantilla
+
+```mermaid
+sequenceDiagram
+  actor P as Persona
+  participant GH as GitHub
+  participant S as iniciar-proyecto.mjs
+  participant CI as CI
+  P->>GH: Usar esta plantilla
+  GH-->>P: repo nuevo con la base
+  P->>S: node scripts/iniciar-proyecto.mjs --nombre "…"
+  S->>S: pone el nombre del repo en todos los archivos
+  S->>S: mueve .plantilla/README.md a README.md
+  S->>S: CHANGELOG limpio y se borra a sí mismo
+  P->>GH: primer commit y push
+  GH->>CI: secretos · enlaces · pruebas
+  CI-->>P: verde
+  P->>GH: ajustes manuales (lista Primeros pasos)
 ```
