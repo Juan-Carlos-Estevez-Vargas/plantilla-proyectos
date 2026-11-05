@@ -1,95 +1,131 @@
-# NOMBRE DEL PROYECTO
+# Plantilla de proyectos
 
-**Una frase que diga qué es y para quién.**
+**Punto de partida para cualquier repo nuevo: seguridad, CI, documentación,
+diagramas e idiomas listos desde el primer commit.**
 
-[![CI](https://github.com/Juan-Carlos-Estevez-Vargas/NOMBRE-DEL-REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/Juan-Carlos-Estevez-Vargas/NOMBRE-DEL-REPO/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/Juan-Carlos-Estevez-Vargas/NOMBRE-DEL-REPO/actions/workflows/codeql.yml/badge.svg)](https://github.com/Juan-Carlos-Estevez-Vargas/NOMBRE-DEL-REPO/actions/workflows/codeql.yml)
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Juan-Carlos-Estevez-Vargas/NOMBRE-DEL-REPO/badge)](https://scorecard.dev/viewer/?uri=github.com/Juan-Carlos-Estevez-Vargas/NOMBRE-DEL-REPO)
+![Plantilla de proyectos: seguridad, CI multi-stack, releases SemVer, diagramas Mermaid e i18n para React](.plantilla/social-preview.png)
+
+[![CI](https://github.com/Juan-Carlos-Estevez-Vargas/plantilla-proyectos/actions/workflows/ci.yml/badge.svg)](https://github.com/Juan-Carlos-Estevez-Vargas/plantilla-proyectos/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/Juan-Carlos-Estevez-Vargas/plantilla-proyectos/actions/workflows/codeql.yml/badge.svg)](https://github.com/Juan-Carlos-Estevez-Vargas/plantilla-proyectos/actions/workflows/codeql.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/Juan-Carlos-Estevez-Vargas/plantilla-proyectos/badge)](https://scorecard.dev/viewer/?uri=github.com/Juan-Carlos-Estevez-Vargas/plantilla-proyectos)
+[![Release](https://img.shields.io/github/v/release/Juan-Carlos-Estevez-Vargas/plantilla-proyectos?label=versi%C3%B3n)](https://github.com/Juan-Carlos-Estevez-Vargas/plantilla-proyectos/releases)
 [![Licencia: MIT](https://img.shields.io/badge/licencia-MIT-blue)](LICENSE)
 [![Invítame un café en Ko-fi](https://img.shields.io/badge/Ko--fi-Inv%C3%ADtame%20un%20caf%C3%A9-ff5e5b?logo=kofi&logoColor=white)](https://ko-fi.com/juancarlosestevezvargas)
 
-> Repo creado desde la plantilla de proyectos. Antes del primer commit:
-> reemplaza `NOMBRE-DEL-REPO` en todos los archivos, borra este aviso y sigue
-> la lista de [Primeros pasos](#primeros-pasos-de-la-plantilla).
+<a href="https://github.com/new?template_name=plantilla-proyectos&template_owner=Juan-Carlos-Estevez-Vargas"><img src="https://img.shields.io/badge/Usar%20esta%20plantilla-2ea44f?style=for-the-badge&logo=github&logoColor=white" alt="Usar esta plantilla para crear un repo nuevo"></a>
 
 ## Contenido
 
-- [Descripción](#descripción)
-- [Capturas](#capturas)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologías](#tecnologías)
-- [Inicio rápido](#inicio-rápido)
+- [Qué es](#qué-es)
+- [Qué trae](#qué-trae)
+- [Cómo usarla](#cómo-usarla)
+- [Cómo funciona](#cómo-funciona)
+- [Estructura](#estructura)
 - [Scripts](#scripts)
-- [Arquitectura](#arquitectura)
-- [Seguridad y privacidad](#seguridad-y-privacidad)
-- [Accesibilidad, idiomas y SEO](#accesibilidad-idiomas-y-seo)
-- [Despliegue y versiones](#despliegue-y-versiones)
+- [Stacks que reconoce el CI](#stacks-que-reconoce-el-ci)
 - [Documentación](#documentación)
+- [Mantener la plantilla](#mantener-la-plantilla)
 - [Contribuir](#contribuir)
 - [Apoyar el proyecto](#apoyar-el-proyecto)
 - [Licencia](#licencia)
 
-## Descripción
+## Qué es
 
-Qué problema resuelve, sus funciones principales y en qué estado está.
+Una plantilla de GitHub (*template repository*) que aplica el plan general de
+proyectos de Juan Carlos Estevez Vargas: cada repo nuevo nace con la misma
+base de seguridad, calidad, versionamiento y documentación, sin importar el
+lenguaje. Sirve igual para una app web en React, una API en Spring Boot, un
+script en Python o un ejercicio en C++.
 
-## Capturas
+## Qué trae
 
-<!-- Imágenes en docs/capturas/ con texto alternativo descriptivo. -->
-
-## Funcionalidades
-
-| Área | Ruta | Acceso |
+| Área | Qué incluye | Dónde |
 | --- | --- | --- |
-| | | |
+| Seguridad | Buscador de secretos sobre archivos, historial y build; CodeQL; OpenSSF Scorecard; Dependabot; política de reporte privado; tabla OWASP | [`scripts/check-secrets.mjs`](scripts/check-secrets.mjs), [`.github/workflows/`](.github/workflows/), [SECURITY.md](SECURITY.md), [SEGURIDAD_OWASP.md](docs/SEGURIDAD_OWASP.md) |
+| CI | Detecta el stack y corre pruebas, auditoría de dependencias y build; revisa los enlaces de la documentación | [`ci.yml`](.github/workflows/ci.yml) |
+| Versiones | Conventional Commits, SemVer, release automático al subir un tag `vX.Y.Z`, notas agrupadas y CHANGELOG | [`release.yml`](.github/workflows/release.yml), [CHANGELOG.md](CHANGELOG.md) |
+| Documentación | README del proyecto con todas sus secciones, arquitectura, despliegue, legal, decisiones (ADR) | [`.plantilla/README.md`](.plantilla/README.md), [`docs/`](docs/) |
+| Diagramas | Mermaid: arquitectura, datos, inicio de sesión, CI y despliegue, idiomas, uso de la plantilla | [DIAGRAMAS.md](docs/DIAGRAMAS.md) |
+| Idiomas | Guía de i18n y base lista para React + TypeScript (español, inglés, portugués) | [IDIOMAS.md](docs/IDIOMAS.md), [`extras/i18n-react/`](extras/i18n-react/) |
+| Contribuciones | Guía, código de conducta, plantillas de PR e issues, CODEOWNERS | [CONTRIBUTING.md](CONTRIBUTING.md), [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md), [`.github/`](.github/) |
+| Editor | `.editorconfig`, finales de línea LF en Windows y extensiones recomendadas | [`.editorconfig`](.editorconfig), [`.gitattributes`](.gitattributes), [`.vscode/`](.vscode/) |
+| Apoyo | Botón **Sponsor** y enlace de Ko-fi | [`FUNDING.yml`](.github/FUNDING.yml) |
 
-## Tecnologías
+## Cómo usarla
 
-| Capa | Tecnología |
-| --- | --- |
-| Interfaz | |
-| Backend | |
-| Base de datos | |
-| Pruebas | |
-| Publicación | |
+1. Pulsa **[Usar esta plantilla](https://github.com/new?template_name=plantilla-proyectos&template_owner=Juan-Carlos-Estevez-Vargas)**
+   y crea el repo nuevo.
+2. Clónalo y, dentro de la carpeta, inícialo con un solo comando
+   (requiere Node 20 o superior):
 
-## Inicio rápido
+   ```bash
+   node scripts/iniciar-proyecto.mjs --nombre "Mi proyecto" --descripcion "Qué es y para quién"
+   # opcional: --sin-extras si no usarás la base de idiomas de React
+   # opcional: --simular para ver qué haría sin tocar nada
+   git add -A && git commit -m "chore: iniciar proyecto desde la plantilla"
+   ```
 
-```bash
-# instalar dependencias
-# copiar .env.example a .env y llenarlo
-# correr en local
-# correr las pruebas
+   El script pone el nombre del repo en todos los enlaces, deja el README del
+   proyecto en lugar de este, empieza un CHANGELOG limpio y se borra solo.
+3. Sigue la lista **Primeros pasos** del README nuevo: los ajustes que solo se
+   activan en GitHub (ramas protegidas, squash merge, secret scanning) y las
+   secciones que dependen del stack.
+
+## Cómo funciona
+
+```mermaid
+flowchart LR
+  T["Plantilla"] -- "Usar esta plantilla" --> R["Repo nuevo"]
+  R --> S["node scripts/iniciar-proyecto.mjs"]
+  S --> P["Nombre en todos los archivos<br/>README del proyecto<br/>CHANGELOG limpio"]
+  P --> C["Primer commit"]
+  C --> CI["CI: secretos · enlaces · pruebas · auditoría · build"]
+  C --> G["Ajustes de GitHub<br/>(lista Primeros pasos)"]
+```
+
+Los demás diagramas (arquitectura, CI y despliegue, versiones, idiomas) están
+en [docs/DIAGRAMAS.md](docs/DIAGRAMAS.md).
+
+## Estructura
+
+```
+.plantilla/            README del proyecto (el script lo pone en la raíz) e imagen para compartir
+.github/
+  workflows/           ci, codeql, scorecard, release
+  ISSUE_TEMPLATE/      error y mejora (las vulnerabilidades van en privado)
+  CODEOWNERS · FUNDING.yml · dependabot.yml · release.yml · pull_request_template.md
+docs/
+  ARQUITECTURA.md · DIAGRAMAS.md · DESPLIEGUE.md · IDIOMAS.md · LEGAL.md · SEGURIDAD_OWASP.md
+  adr/                 decisiones de arquitectura, una por archivo
+extras/i18n-react/     base de idiomas para copiar en src/ (opcional)
+scripts/               secretos, enlaces e inicio del proyecto, con sus pruebas
 ```
 
 ## Scripts
 
+Sin dependencias: solo Node 20 o superior.
+
 | Comando | Qué hace |
 | --- | --- |
-| | |
+| `node scripts/iniciar-proyecto.mjs` | Deja listo un repo recién creado desde la plantilla (una sola vez) |
+| `node scripts/check-secrets.mjs --history` | Busca claves en los archivos y en todo el historial de git |
+| `node scripts/check-secrets.mjs dist` | Busca claves en el build antes de publicarlo |
+| `node scripts/check-links.mjs` | Revisa que los enlaces y anclas internas de los `.md` existan |
+| `node --test "scripts/*.test.mjs"` | Corre las pruebas de los scripts |
 
-## Arquitectura
+## Stacks que reconoce el CI
 
-Resumen de las capas y cómo se conectan. El detalle está en
-[ARQUITECTURA.md](docs/ARQUITECTURA.md) y los diagramas en
-[DIAGRAMAS.md](docs/DIAGRAMAS.md).
+El CI mira qué archivos hay y corre lo que corresponde. Cuando el proyecto
+tenga su propio comando (por ejemplo `npm run check`), se reemplaza ese paso.
 
-## Seguridad y privacidad
-
-Qué protege la app y cómo (autenticación, permisos, cabeceras, secretos,
-datos personales). Estado de cada punto en
-[SEGURIDAD_OWASP.md](docs/SEGURIDAD_OWASP.md) y en [LEGAL.md](docs/LEGAL.md).
-
-## Accesibilidad, idiomas y SEO
-
-Nivel de accesibilidad que se busca (WCAG 2.2 AA), idiomas disponibles y cómo
-se detecta el del navegador ([IDIOMAS.md](docs/IDIOMAS.md)), y qué páginas se
-indexan.
-
-## Despliegue y versiones
-
-Dónde se publica, qué variables necesita y cómo se versiona. Paso a paso en
-[DESPLIEGUE.md](docs/DESPLIEGUE.md).
+| Si encuentra | Corre |
+| --- | --- |
+| `package.json` | `npm ci`, `npm audit`, typecheck, lint, pruebas y build |
+| `pom.xml` / `gradlew` | `mvn verify` / `./gradlew build` |
+| `composer.json` | `composer install`, `composer audit`, PHPUnit |
+| `pyproject.toml` / `requirements.txt` | `pip-audit` y pytest |
+| `CMakeLists.txt` | build y CTest |
+| Nada de lo anterior | Solo secretos, enlaces y pruebas de los scripts |
 
 ## Documentación
 
@@ -97,41 +133,37 @@ Dónde se publica, qué variables necesita y cómo se versiona. Paso a paso en
 | --- | --- |
 | [Arquitectura](docs/ARQUITECTURA.md) | Piezas del sistema y cómo se conectan |
 | [Diagramas](docs/DIAGRAMAS.md) | Diagramas en Mermaid de la arquitectura y de cada flujo |
-| [Despliegue](docs/DESPLIEGUE.md) | Cómo montarlo desde cero y qué variables necesita |
+| [Despliegue](docs/DESPLIEGUE.md) | Cómo montarlo, variables, versiones y vuelta atrás |
 | [Seguridad](docs/SEGURIDAD_OWASP.md) | Estado de cada punto de seguridad |
 | [Legal](docs/LEGAL.md) | Privacidad, datos personales y licencias |
-| [Idiomas](docs/IDIOMAS.md) | Cómo traducir la app: detección del idioma, selector y diccionarios |
+| [Idiomas](docs/IDIOMAS.md) | Detección del idioma, selector y diccionarios |
+| [Decisiones (ADR)](docs/adr/README.md) | Por qué se eligió cada pieza importante |
+| [Cambios](CHANGELOG.md) | Historial de versiones de la plantilla |
 | [Política de seguridad](SECURITY.md) | Cómo reportar una vulnerabilidad |
+
+## Mantener la plantilla
+
+- Un cambio que sirva para todos los proyectos se hace aquí primero, con su
+  diagrama y su línea en el [CHANGELOG](CHANGELOG.md).
+- Los textos que deben llevar el nombre de cada proyecto usan
+  `NOMBRE-DEL-REPO` y `NOMBRE DEL PROYECTO`; el script los reemplaza.
+- Al publicar una versión: `git tag v1.2.0 && git push origin v1.2.0`. El
+  release sale solo con sus notas.
+- Los repos ya creados no se actualizan solos: se copian a mano los archivos
+  que cambiaron (las notas del release dicen cuáles).
 
 ## Contribuir
 
-Lee la [guía de contribución](CONTRIBUTING.md). Los commits siguen
+Lee la [guía de contribución](CONTRIBUTING.md) y el
+[código de conducta](CODE_OF_CONDUCT.md). Los commits siguen
 [Conventional Commits](https://www.conventionalcommits.org/es/).
 
 ## Apoyar el proyecto
 
-Si este proyecto te sirvió o aprendiste algo del código, puedes invitarme un
-café:
+Si esta plantilla te sirvió, puedes invitarme un café:
 
 <a href="https://ko-fi.com/juancarlosestevezvargas"><img src="https://img.shields.io/badge/Ko--fi-Inv%C3%ADtame%20un%20caf%C3%A9-ff5e5b?style=for-the-badge&logo=kofi&logoColor=white" alt="Invítame un café en Ko-fi"></a>
-
-GitHub también muestra el botón **Sponsor** del repositorio
-(`.github/FUNDING.yml`).
 
 ## Licencia
 
 [MIT](LICENSE) © Juan Carlos Estevez Vargas
-
-## Primeros pasos de la plantilla
-
-- [ ] Reemplazar `NOMBRE-DEL-REPO` y `NOMBRE DEL PROYECTO` en todos los archivos
-- [ ] Dejar en `.github/dependabot.yml` solo los ecosistemas que use el proyecto
-- [ ] Ajustar los lenguajes de `.github/workflows/codeql.yml` (CodeQL y Scorecard solo corren en repos públicos; en uno privado se saltan solos)
-- [ ] GitHub → Settings → General: permitir solo *squash merge* y borrar ramas al fusionar
-- [ ] GitHub → Settings → Rules: proteger la rama principal (PR obligatorio, CI en verde, sin force push)
-- [ ] GitHub → Settings → Code security: Secret scanning, Push protection, Dependabot alerts y Private vulnerability reporting
-- [ ] Si la app tiene interfaz: montar los idiomas con [docs/IDIOMAS.md](docs/IDIOMAS.md) (en React + TypeScript, copiar `extras/i18n-react/`); si no, borrar `extras/` y esa guía
-- [ ] Llenar o borrar las secciones del README que no apliquen (Funcionalidades, Scripts…)
-- [ ] Si la app tiene interfaz y quieres el botón «Invítame un café», usar el mismo enlace de Ko-fi (`https://ko-fi.com/juancarlosestevezvargas`); `.github/FUNDING.yml` ya lo trae
-- [ ] Descripción, temas (topics) y enlace al sitio del repo
-- [ ] Borrar esta sección
