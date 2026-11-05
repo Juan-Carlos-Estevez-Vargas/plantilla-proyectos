@@ -1,7 +1,7 @@
 # Guía de contribución
 
 ¡Gracias por tu interés! Los cambios grandes conviene conversarlos primero en
-un issue.
+un issue. Al participar aceptas el [código de conducta](CODE_OF_CONDUCT.md).
 
 ## Reportar errores o proponer ideas
 
@@ -13,9 +13,14 @@ un issue.
 
 1. Crea una rama corta desde la rama principal: `feat/...`, `fix/...`, `docs/...`.
 2. Haz cambios pequeños y enfocados.
-3. Corre las pruebas y el build en local.
-4. Actualiza en el mismo PR los diagramas afectados (`docs/DIAGRAMAS.md`)
-   y el README.
+3. Corre las pruebas y el build en local, más las revisiones de la base:
+   ```bash
+   node scripts/check-secrets.mjs
+   node scripts/check-links.mjs
+   node --test "scripts/*.test.mjs"
+   ```
+4. Actualiza en el mismo PR los diagramas afectados (`docs/DIAGRAMAS.md`),
+   el README y, si es una decisión importante, su ADR en `docs/adr/`.
 5. Abre el PR, completa la plantilla y espera CI en verde.
 6. Se fusiona con **squash merge**: un commit limpio por PR.
 
